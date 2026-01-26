@@ -1,87 +1,124 @@
-# Welcome to React Router!
+# React TS Vite Boilerplate
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, high-performance web application boilerplate built with **React 19**, **Vite 7**, **TypeScript**, and **Tailwind CSS v4**.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 🚀 Features
 
-## Features
+- **⚡ Vite 7**: Next-generation frontend tooling with instant server start and lightning-fast HMR.
+- **⚛️ React 19**: Leveraging the latest React features including robust concurrent rendering.
+- **📘 TypeScript**: Fully typed codebase for better developer experience and code reliability.
+- **🎨 Tailwind CSS v4**: Utility-first CSS framework with the latest engine and features.
+- **🚦 React Router v7**: Declarative, nesting-capable routing.
+- **👮 Code Quality**: ESLint, Prettier, Husky, and Lint-staged configured for consistent code style.
+- **🔍 SEO**: Built-in metadata management.
+- **📦 Path Aliases**: Pre-configured `@/` alias for clean imports.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## 🛠️ Getting Started
 
-## Getting Started
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+- npm or pnpm
 
 ### Installation
 
-Install the dependencies:
+1.  Clone the repository:
 
-```bash
-npm install
+    ```bash
+    git clone <repository-url>
+    cd react-ts-vite-boilerplate
+    ```
+
+2.  Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3.  Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+4.  Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 📜 Available Scripts
+
+| Script              | Description                                   |
+| :------------------ | :-------------------------------------------- |
+| `npm run dev`       | Starts the development server with HMR.       |
+| `npm run build`     | Builds the application for production.        |
+| `npm run start`     | Starts the production server.                 |
+| `npm run typecheck` | Runs TypeScript type checking.                |
+| `npm run lint`      | Runs ESLint to check for code quality issues. |
+| `npm run lint:fix`  | Automatically fixes simple linting errors.    |
+| `npm run format`    | Formats code with Prettier.                   |
+| `npm run prepare`   | Sets up Husky git hooks (automatic).          |
+
+## 📂 Project Structure
+
+```text
+app/
+├── components/         # Reusable UI components
+│   ├── Button.tsx
+│   ├── Footer.tsx
+│   └── Navbar.tsx
+├── lib/                # Utility functions and shared logic
+│   └── utils.ts
+├── routes/             # Page components
+│   ├── 404.tsx
+│   ├── about.tsx
+│   └── home.tsx
+├── styles/             # Global styles and theme configuration
+│   ├── fonts.css       # Font imports and definitions
+│   ├── index.css       # Tailwind imports
+│   └── theme.css       # CSS variables and theme tokens
+├── root.tsx            # Root layout with HTML structure
+└── routes.ts           # Route configuration
 ```
 
-### Development
+## 🧩 Usage Guide
 
-Start the development server with HMR:
+### Routing
 
-```bash
-npm run dev
+This project uses **React Router v7** with file-based route configuration. Define your routes in `app/routes.ts`.
+
+```tsx
+// app/routes.ts
+import { index, route, type RouteConfig } from '@react-router/dev/routes';
+
+export default [index('routes/home.tsx'), route('about', 'routes/about.tsx')] satisfies RouteConfig;
 ```
 
-Your application will be available at `http://localhost:5173`.
+## 🚀 Deployment
 
-## Building for Production
+### GitHub Pages
 
-Create a production build:
+This project includes a GitHub Actions workflow to automatically deploy to GitHub Pages.
 
-```bash
-npm run build
-```
+1.  **Push to main**: The workflow triggers on every push to the `main` branch.
+2.  **Enable GitHub Pages**:
+    - Go to your repository **Settings**.
+    - Click on **Pages** in the sidebar.
+    - Under **Build and deployment > Source**, select **GitHub Actions**.
+3.  **Verify**: Once the action completes, your site will be deployed to the URL provided in the Actions tab.
 
-## Deployment
+The workflow automatically sets the correct base path for your repository. If you are using a custom domain, you might need to adjust `BASE_PATH` in `.github/workflows/deploy.yml`.
 
-### Docker Deployment
+## ⚙️ Configuration
 
-To build and run using Docker:
+- **Vite**: `vite.config.ts` is configured with React Router, Tailwind CSS v4, and path aliasing (`@/`).
+- **TypeScript**: `tsconfig.json` follows strict mode.
+- **Linting**: Controlled by `eslint.config.ts`.
 
-```bash
-docker build -t my-app .
+## 🤝 Contributing
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+1.  Create a feature branch (`git checkout -b feature/amazing-feature`).
+2.  Commit your changes (`git commit -m 'Add some amazing feature'`).
+3.  Push to the branch (`git push origin feature/amazing-feature`).
+4.  Open a Pull Request.
 
 ---
 
-Built with ❤️ using React Router.
+Built with ❤️ using [Vite](https://vitejs.dev/) and [React Router](https://reactrouter.com/).
