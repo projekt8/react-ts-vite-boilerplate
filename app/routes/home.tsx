@@ -1,9 +1,9 @@
-import type { Route } from "./+types/home";
+import type { Route } from './+types/home';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Home" },
-    { name: "description", content: "Welcome to the React 19 Boilerplate" },
+    { title: 'Home' },
+    { name: 'description', content: 'Welcome to the React 19 Boilerplate' },
   ];
 }
 
@@ -20,16 +20,15 @@ export default function HomePage() {
         <div className="relative z-10 text-center space-y-8 p-8 max-w-4xl mx-auto">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 dark:text-indigo-50 tracking-tight leading-tight">
-              Create{" "}
+              Create{' '}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
                 Beautiful
-              </span>{" "}
+              </span>{' '}
               Experiences
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              A production-ready React 19 boilerplate crafted with Vite,
-              TypeScript, and Tailwind CSS v4. Optimized for performance and
-              developer experience.
+              A production-ready React 19 boilerplate crafted with Vite, TypeScript, and Tailwind
+              CSS v4. Optimized for performance and developer experience.
             </p>
           </div>
         </div>

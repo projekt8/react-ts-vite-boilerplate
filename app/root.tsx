@@ -1,7 +1,7 @@
-import "./styles/index.css";
+import './styles/index.css';
 
-import interFont from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
-import playfairFont from "@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2?url";
+import interFont from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import playfairFont from '@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2?url';
 import {
   isRouteErrorResponse,
   Links,
@@ -10,26 +10,26 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteError,
-} from "react-router";
-import type { Route } from "./+types/root";
+} from 'react-router';
+import type { Route } from './+types/root';
 
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 export const links: Route.LinksFunction = () => [
   {
-    rel: "preload",
+    rel: 'preload',
     href: interFont,
-    as: "font",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
+    as: 'font',
+    type: 'font/woff2',
+    crossOrigin: 'anonymous',
   },
   {
-    rel: "preload",
+    rel: 'preload',
     href: playfairFont,
-    as: "font",
-    type: "font/woff2",
-    crossOrigin: "anonymous",
+    as: 'font',
+    type: 'font/woff2',
+    crossOrigin: 'anonymous',
   },
 ];
 
@@ -63,16 +63,14 @@ export default function App() {
 
 export function ErrorBoundary() {
   const error = useRouteError();
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
+  let message = 'Oops!';
+  let details = 'An unexpected error occurred.';
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
+    message = error.status === 404 ? '404' : 'Error';
     details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+      error.status === 404 ? 'The requested page could not be found.' : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
@@ -81,9 +79,7 @@ export function ErrorBoundary() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-red-50 dark:bg-red-900/10 p-4 font-sans">
       <div className="text-center max-w-md">
-        <h2 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-4">
-          {message}
-        </h2>
+        <h2 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-4">{message}</h2>
         <p className="text-gray-600 dark:text-gray-300 mb-6">{details}</p>
         {stack && (
           <pre className="w-full p-4 overflow-x-auto text-xs text-left bg-black/10 text-red-800 dark:text-red-200 rounded mb-6">
