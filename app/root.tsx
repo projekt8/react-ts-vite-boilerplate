@@ -46,7 +46,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="text-foreground dark:text-foreground-dark bg-background dark:bg-background-dark flex min-h-screen flex-col font-sans antialiased transition-colors duration-300">
           <Navbar />
 
-          <main className="grow">{children}</main>
+          <main className="relative flex grow flex-col items-center justify-center overflow-hidden bg-white px-4 py-20 dark:bg-gray-950">
+            {children}
+          </main>
 
           <Footer />
         </div>
