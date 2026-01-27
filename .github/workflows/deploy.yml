@@ -42,6 +42,24 @@ jobs:
           # Update this variable or rely on the default if appropriate.
           BASE_PATH: /${{ github.event.repository.name }}/
 
+      - name: Move files (fix subfolder)
+        run: |
+          # Move the contents of the subfolder (e.g. build/client/repo-name) to build/client
+          # React Router v7 prerender creates the folder structure matching the base path.
+          # GitHub Pages artifact upload expects the site root at the artifact root.
+          SITE_ROOT=build/client
+          SUBFOLDER=$SITE_ROOT${{ env.BASE_PATH }}
+
+          if [ -d "$SUBFOLDER" ]; then
+            echo "Moving content from $SUBFOLDER to $SITE_ROOT"
+            rsync -av $SUBFOLDER/ $SITE_ROOT/
+            rm -rf $SUBFOLDER
+          else
+             echo "Subfolder $SUBFOLDER not found, skipping move."
+          fi
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
