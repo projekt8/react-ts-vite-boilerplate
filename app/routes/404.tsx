@@ -15,8 +15,8 @@ export function meta({}: Route.MetaArgs) {
 export default function NotFoundPage() {
   return (
     <>
-      <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-br from-red-50 to-orange-100 dark:from-gray-900 dark:to-red-900">
-        <div className="text-center space-y-6 p-8">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-linear-to-br from-red-50 to-orange-100 dark:from-gray-900 dark:to-red-900">
+        <div className="space-y-6 p-8 text-center">
           <h1 className="text-9xl font-bold text-gray-900 dark:text-white">404</h1>
           <h2 className="text-3xl font-semibold text-gray-700 dark:text-gray-200">
             Page Not Found

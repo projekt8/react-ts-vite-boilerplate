@@ -43,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="flex flex-col min-h-screen font-sans antialiased text-foreground dark:text-foreground-dark bg-background dark:bg-background-dark transition-colors duration-300">
+        <div className="text-foreground dark:text-foreground-dark bg-background dark:bg-background-dark flex min-h-screen flex-col font-sans antialiased transition-colors duration-300">
           <Navbar />
 
           <main className="grow">{children}</main>
@@ -77,18 +77,18 @@ export function ErrorBoundary() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-red-50 dark:bg-red-900/10 p-4 font-sans">
-      <div className="text-center max-w-md">
-        <h2 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-4">{message}</h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-6">{details}</p>
+    <main className="flex min-h-screen items-center justify-center bg-red-50 p-4 font-sans dark:bg-red-900/10">
+      <div className="max-w-md text-center">
+        <h2 className="mb-4 text-2xl font-bold text-red-600 dark:text-red-400">{message}</h2>
+        <p className="mb-6 text-gray-600 dark:text-gray-300">{details}</p>
         {stack && (
-          <pre className="w-full p-4 overflow-x-auto text-xs text-left bg-black/10 text-red-800 dark:text-red-200 rounded mb-6">
+          <pre className="mb-6 w-full overflow-x-auto rounded bg-black/10 p-4 text-left text-xs text-red-800 dark:text-red-200">
             <code>{stack}</code>
           </pre>
         )}
         <a
           href="/"
-          className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition-colors inline-block"
+          className="inline-block rounded bg-red-600 px-4 py-2 text-white transition-colors hover:bg-red-700"
         >
           Go Home
         </a>

@@ -9,19 +9,19 @@ export function meta({}: Route.MetaArgs) {
 export default function AboutPage() {
   return (
     <>
-      <div className="min-h-[calc(100vh-4rem)] bg-white dark:bg-gray-950 py-20 px-4">
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white">
+      <div className="min-h-[calc(100vh-4rem)] bg-white px-4 py-20 dark:bg-gray-950">
+        <div className="mx-auto max-w-4xl space-y-12">
+          <div className="space-y-4 text-center">
+            <h1 className="font-serif text-4xl font-bold text-gray-900 md:text-5xl dark:text-white">
               Under the Hood
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
               Built with a carefully curated stack of modern technologies to ensure scalability and
               performance.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {[
               {
                 title: 'Vite 7',
@@ -56,17 +56,17 @@ export default function AboutPage() {
             ].map((tech) => (
               <div
                 key={tech.title}
-                className="group p-6 rounded-2xl bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900/50 transition-all hover:shadow-lg"
+                className="group rounded-2xl border border-gray-100 bg-gray-50 p-6 transition-all hover:border-indigo-100 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900/50 dark:hover:border-indigo-900/50"
               >
-                <div className="flex items-center gap-4 mb-3">
+                <div className="mb-3 flex items-center gap-4">
                   <span
-                    className={`w-3 h-3 rounded-full ${tech.color} ring-4 ring-white dark:ring-gray-900`}
+                    className={`h-3 w-3 rounded-full ${tech.color} ring-4 ring-white dark:ring-gray-900`}
                   ></span>
-                  <h3 className="font-bold text-xl text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 transition-colors group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
                     {tech.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 pl-7">{tech.desc}</p>
+                <p className="pl-7 text-gray-600 dark:text-gray-400">{tech.desc}</p>
               </div>
             ))}
           </div>

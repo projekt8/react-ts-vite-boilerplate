@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800 py-12 bg-gray-50 dark:bg-gray-900/50">
+    <footer className="border-t border-gray-200 bg-gray-50 py-12 dark:border-gray-800 dark:bg-gray-900/50">
       <div className="container mx-auto px-4 text-center">
-        <p className="font-serif text-lg text-gray-700 dark:text-gray-300 mb-4">
+        <p className="mb-4 font-serif text-lg text-gray-700 dark:text-gray-300">
           Built with modern standards.
         </p>
         <div className="text-sm text-gray-600 dark:text-gray-400">
