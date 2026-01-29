@@ -15,6 +15,7 @@ import type { Route } from './+types/root';
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { AnimatedBackground } from '@/components/AnimatedBackground';
 
 export const links: Route.LinksFunction = () => [
   {
@@ -43,14 +44,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="text-foreground dark:text-foreground-dark bg-background dark:bg-background-dark flex min-h-screen flex-col font-sans antialiased transition-colors duration-300">
+        <div className="text-foreground dark:text-foreground-dark relative flex min-h-screen flex-col font-sans antialiased transition-colors duration-300">
           <Navbar />
 
-          <main className="relative flex grow flex-col items-center justify-center overflow-hidden bg-white px-4 py-20 dark:bg-gray-950">
+          <main className="relative z-10 flex grow flex-col items-center justify-center overflow-hidden px-4 py-20">
             {children}
           </main>
 
           <Footer />
+          <AnimatedBackground />
         </div>
         <ScrollRestoration />
         <Scripts />

@@ -10,7 +10,7 @@ const buttonVariants = cva(
       variant: {
         primary: 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-md hover:shadow-lg',
         secondary:
-          'bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-800',
+          'bg-gray-900/60 text-gray-100 hover:bg-gray-800/60 border border-gray-400/10 backdrop-blur-3xl transition-all duration-300',
       },
       size: {
         default: 'px-6 py-3',

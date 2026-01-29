@@ -11,10 +11,8 @@ export default function AboutPage() {
     <>
       <div className="mx-auto max-w-4xl space-y-12">
         <div className="space-y-4 text-center">
-          <h1 className="font-serif text-4xl font-bold text-gray-900 md:text-5xl dark:text-white">
-            Under the Hood
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
+          <h1 className="font-serif text-4xl font-bold text-white md:text-5xl">Under the Hood</h1>
+          <p className="mx-auto max-w-2xl text-lg text-gray-400">
             Built with a carefully curated stack of modern technologies to ensure scalability and
             performance.
           </p>
@@ -50,17 +48,15 @@ export default function AboutPage() {
           ].map((tech) => (
             <div
               key={tech.title}
-              className="group rounded-2xl border border-gray-100 bg-gray-50 p-6 transition-all hover:border-indigo-100 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900/50 dark:hover:border-indigo-900/50"
+              className="group rounded-2xl border border-gray-100/10 bg-gray-900/50 p-6 backdrop-blur-3xl transition-all"
             >
               <div className="mb-3 flex items-center gap-4">
-                <span
-                  className={`h-3 w-3 rounded-full ${tech.color} ring-4 ring-white dark:ring-gray-900`}
-                ></span>
-                <h3 className="text-xl font-bold text-gray-900 transition-colors group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
+                <span className={`h-3 w-3 rounded-full ${tech.color} ring-4 ring-white`}></span>
+                <h3 className="text-xl font-bold text-white transition-colors group-hover:text-indigo-400">
                   {tech.title}
                 </h3>
               </div>
-              <p className="pl-7 text-gray-600 dark:text-gray-400">{tech.desc}</p>
+              <p className="pl-7 text-gray-400">{tech.desc}</p>
             </div>
           ))}
         </div>
