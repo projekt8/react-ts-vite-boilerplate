@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import Button from '@/components/Button';
+import IconGitHub from '@/assets/github.svg?react';
 
 export const Navbar = () => {
   return (
@@ -18,13 +19,14 @@ export const Navbar = () => {
           About
         </Button>
         <Button
-          to="https://projekt8.github.io/react-ts-vite-boilerplate"
+          to="https://github.com/projekt8/react-ts-vite-boilerplate"
           target="_blank"
           rel="noreferrer"
           variant="primary"
           className="px-3 py-1"
         >
-          GitHub
+          <IconGitHub className="size-5" />
+          <span className="sr-only md:not-sr-only">GitHub</span>
         </Button>
       </nav>
     </header>
