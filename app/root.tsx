@@ -15,6 +15,7 @@ import type { Route } from './+types/root';
 
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
+import { Button } from '@/components/Button';
 
 export const links: Route.LinksFunction = () => [
   {
@@ -78,22 +79,17 @@ export function ErrorBoundary() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-red-50 p-4 font-sans dark:bg-red-900/10">
-      <div className="max-w-md text-center">
-        <h2 className="mb-4 text-2xl font-bold text-red-600 dark:text-red-400">{message}</h2>
-        <p className="mb-6 text-gray-600 dark:text-gray-300">{details}</p>
-        {stack && (
-          <pre className="mb-6 w-full overflow-x-auto rounded bg-black/10 p-4 text-left text-xs text-red-800 dark:text-red-200">
-            <code>{stack}</code>
-          </pre>
-        )}
-        <a
-          href="/"
-          className="inline-block rounded bg-red-600 px-4 py-2 text-white transition-colors hover:bg-red-700"
-        >
-          Go Home
-        </a>
+    <div className="container mx-auto flex flex-col items-center justify-center gap-8">
+      <div className="max-w-xl text-center">
+        <h1 className="text-error mb-8">{message}</h1>
+        <p>{details}</p>
       </div>
-    </main>
+      {stack && (
+        <pre className="w-full overflow-x-auto rounded bg-black/10 p-4 text-left text-xs text-red-800 dark:text-red-200">
+          <code>{stack}</code>
+        </pre>
+      )}
+      <Button to="/">Go Home</Button>
+    </div>
   );
 }

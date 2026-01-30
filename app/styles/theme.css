@@ -13,6 +13,6 @@
 
   --color-black: #0f1b27;
   --color-white: #f5fbff;
-  --color-success: #14a26e;
-  --color-error: #f03e40;
+  --color-success: var(--color-green-400);
+  --color-error: var(--color-red-400);
 }

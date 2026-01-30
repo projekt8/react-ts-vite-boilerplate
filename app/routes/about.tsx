@@ -1,6 +1,6 @@
 import type { Route } from './+types/about';
 
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: 'About' }, { name: 'description', content: 'Learn more about the tech stack' }];

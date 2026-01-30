@@ -19,10 +19,6 @@ const buttonVariants = cva(
           'bg-secondary-100 text-white hover:text-black',
           'after:content-[""] after:absolute after:rounded-full after:inset-0 after:bg-white after:-translate-x-[105%] after:scale-105 after:transition-all after:duration-300 after:origin-left hover:after:translate-x-0 after:-z-1',
         ],
-        tertiary: [
-          'bg-transparent text-white p-0',
-          'after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:content-[""] after:bg-primary after:scale-x-0 after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100',
-        ],
       },
     },
     defaultVariants: {
@@ -33,6 +29,6 @@ const buttonVariants = cva(
 
 export interface ButtonProps extends LinkProps, VariantProps<typeof buttonVariants> {}
 
-export default function Button({ className, variant, ...props }: ButtonProps) {
+export const Button = ({ className, variant, ...props }: ButtonProps) => {
   return <Link className={cn(buttonVariants({ variant, className }))} {...props} />;
-}
+};

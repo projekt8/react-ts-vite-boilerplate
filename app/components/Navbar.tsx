@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
+import { NavLink } from '@/components/NavLink';
 import IconGitHub from '@/assets/github.svg?react';
 
 export const Navbar = () => {
@@ -12,12 +13,8 @@ export const Navbar = () => {
         Boilerplate.
       </Link>
       <nav className="flex items-center gap-4 font-medium md:gap-8">
-        <Button to="/" variant="tertiary">
-          Home
-        </Button>
-        <Button to="/about" variant="tertiary">
-          About
-        </Button>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
         <Button
           to="https://github.com/projekt8/react-ts-vite-boilerplate"
           target="_blank"
