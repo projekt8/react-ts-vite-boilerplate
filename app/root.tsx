@@ -13,9 +13,8 @@ import {
 } from 'react-router';
 import type { Route } from './+types/root';
 
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import { AnimatedBackground } from '@/components/AnimatedBackground';
+import { Footer } from '@/components/Footer';
+import { Navbar } from '@/components/Navbar';
 
 export const links: Route.LinksFunction = () => [
   {
@@ -43,17 +42,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        <div className="text-foreground dark:text-foreground-dark relative flex min-h-screen flex-col font-sans antialiased transition-colors duration-300">
-          <Navbar />
+      <body className="flex min-h-screen flex-col">
+        <Navbar />
 
-          <main className="relative z-10 flex grow flex-col items-center justify-center overflow-hidden px-4 py-20">
-            {children}
-          </main>
+        <main className="flex grow flex-col items-center justify-center px-4 py-20">
+          {children}
+        </main>
 
-          <Footer />
-          <AnimatedBackground />
-        </div>
+        <Footer />
+
         <ScrollRestoration />
         <Scripts />
       </body>

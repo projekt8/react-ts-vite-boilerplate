@@ -3,37 +3,16 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: 'Playfair Display', serif;
 
-  /* Semantic color tokens using Tailwind's color palette */
-  --color-primary: var(--color-indigo-600);
-  --color-primary-hover: var(--color-indigo-700);
-  --color-secondary: var(--color-purple-600);
-  --color-accent: var(--color-pink-600);
+  /* Colors */
+  --color-primary: #ff6345;
+  --color-secondary: #2c3f52;
+  --color-secondary-100: #28394a;
+  --color-secondary-200: #233242;
+  --color-secondary-300: #1f2c39;
+  --color-secondary-400: #1a2631;
 
-  /* Background colors */
-  --color-background: var(--color-white);
-  --color-background-dark: var(--color-gray-900);
-
-  /* Text colors */
-  --color-foreground: var(--color-gray-900);
-  --color-foreground-dark: var(--color-gray-100);
-
-  /* Border radius */
-  --radius-lg: 0.5rem;
-  --radius-md: 0.375rem;
-  --radius-sm: 0.25rem;
-
-  /* Animations */
-  --animate-rotate-1: rotate 20s linear infinite;
-  --animate-rotate-2: rotate 10s linear infinite;
-  --animate-rotate-3: rotate 25s linear infinite;
-  --animate-rotate-4: rotate 15s linear infinite;
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+  --color-black: #0f1b27;
+  --color-white: #f5fbff;
+  --color-success: #14a26e;
+  --color-error: #f03e40;
 }
