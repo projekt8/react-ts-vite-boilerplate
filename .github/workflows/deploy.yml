@@ -60,6 +60,9 @@ jobs:
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
 
+      - name: Create 404.html for GitHub Pages
+        run: cp ./build/client/index.html ./build/client/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
