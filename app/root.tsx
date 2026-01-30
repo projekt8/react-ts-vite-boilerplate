@@ -32,6 +32,11 @@ export const links: Route.LinksFunction = () => [
     type: 'font/woff2',
     crossOrigin: 'anonymous',
   },
+  {
+    rel: 'icon',
+    href: '/favicon.svg',
+    type: 'image/svg+xml',
+  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
