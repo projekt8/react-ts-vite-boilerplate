@@ -1,4 +1,5 @@
 import type { Route } from './+types/home';
+import { Container } from '@/components/Container';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function HomePage() {
   return (
-    <div className="mx-auto max-w-2xl space-y-8 text-center">
+    <Container className="max-w-3xl text-center">
       <h1>
         Create <span className="text-primary">Beautiful</span> Experiences
       </h1>
@@ -17,6 +18,6 @@ export default function HomePage() {
         A production-ready React 19 boilerplate crafted with Vite, React Router, TypeScript, and
         Tailwind CSS v4. Optimized for performance and developer experience.
       </p>
-    </div>
+    </Container>
   );
 }

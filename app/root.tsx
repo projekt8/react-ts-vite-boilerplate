@@ -1,7 +1,8 @@
-import './styles/index.css';
+import '@/styles/index.css';
 
 import interFont from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import playfairFont from '@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2?url';
+
 import {
   isRouteErrorResponse,
   Links,
@@ -13,8 +14,8 @@ import {
 } from 'react-router';
 import type { Route } from './+types/root';
 
-import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 import { Button } from '@/components/Button';
 
 export const links: Route.LinksFunction = () => [
@@ -48,13 +49,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="flex min-h-screen flex-col">
+      <body className="grid min-h-dvh grid-rows-[auto_1fr_auto]">
         <Navbar />
-
-        <main className="flex grow flex-col items-center justify-center px-4 py-20">
-          {children}
-        </main>
-
+        <main className="grid items-center gap-20 py-12 md:py-24">{children}</main>
         <Footer />
 
         <ScrollRestoration />

@@ -1,6 +1,5 @@
 import type { Route } from './+types/about';
-
-import { Button } from '@/components/Button';
+import { Container } from '@/components/Container';
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: 'About' }, { name: 'description', content: 'Learn more about the tech stack' }];
@@ -8,8 +7,8 @@ export function meta({}: Route.MetaArgs) {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-2xl space-y-12">
-      <div className="space-y-4 text-center">
+    <Container className="max-w-3xl space-y-8">
+      <div className="text-center">
         <h1>Under the Hood</h1>
         <p>
           Built with a carefully curated stack of modern technologies to ensure scalability and
@@ -17,7 +16,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {[
           {
             title: 'React 19',
@@ -49,12 +48,6 @@ export default function AboutPage() {
           </div>
         ))}
       </div>
-
-      <div className="flex justify-center">
-        <Button to="/" variant="secondary">
-          Back to Home
-        </Button>
-      </div>
-    </div>
+    </Container>
   );
 }
